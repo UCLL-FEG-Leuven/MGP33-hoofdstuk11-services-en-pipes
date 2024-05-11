@@ -1,0 +1,30 @@
+<form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Naam van de klok</label>
+      <input type="text" id="name" name="name" [(ngModel)]="model.name">  
+    </div>
+
+    <div>
+      <label for="timeZone">Time zone</label>
+      <select id="timeZone" name="timeZone" required [(ngModel)]="model.timeZone">
+          @for (tz of timeZones; track tz) {
+            <option>{{tz}}</option>
+          }      
+      </select>  
+    </div>
+
+    <div>
+      <label for="localeEnUs">en-US</label>
+      <input type="radio" id="localeEnUs" name="locale" value="en-US" [(ngModel)]="model.locale"/>    
+  
+      <label for="localeNlBe">nl-BE</label>
+      <input type="radio" id="localeNlBe" name="locale" value="nl-BE" [(ngModel)]="model.locale"/>    
+      
+      <label for="localeJaJp">ja-JP</label>
+      <input type="radio" id="localeJaJp" name="locale" value="ja-JP" [(ngModel)]="model.locale"/>      
+    </div>
+
+    <div>
+      <input type="submit" value="Voeg toe">
+    </div>    
+</form>

@@ -1,0 +1,14 @@
+<section [className]="isNight ? 'dark': 'light'">
+    <p>
+        @if (isNight) {
+            <span>&#9789;</span>
+        } @else {
+            <span>&#9788;</span>
+        }    
+        {{ tijd }}
+    </p>
+    <button (click)="changeLocale('en-US')">US</button>
+    <button (click)="changeLocale('nl-BE')">België</button>
+    <button (click)="changeLocale('ja-JP')">Japan</button>
+    <button (click)="remove()">X</button>
+</section>

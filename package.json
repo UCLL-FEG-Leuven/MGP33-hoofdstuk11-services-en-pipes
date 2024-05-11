@@ -1,0 +1,19 @@
+{
+  "name": "mgp33-hoofdstuk10-component-interactie",
+  "version": "0.10.0",
+  "description": "Hoofdstuk 10 - Component interactie: verder bouwen aan de wereldlklok applicatie van hoofdstuk 09",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm ci & concurrently \"cd Client & npm start\" \"cd Server & npm start\""
+  },
+  "keywords": [
+    "UCLL",
+    "FEG",
+    "Angular"
+  ],
+  "author": "David Urting",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
