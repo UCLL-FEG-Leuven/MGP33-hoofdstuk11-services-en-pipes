@@ -1,10 +1,12 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { DatePipe } from '@angular/common';
+
 import { Klok } from '../klok';
 
 @Component({
   selector: 'app-klok',
   standalone: true,
-  imports: [],
+  imports: [DatePipe],
   templateUrl: './klok.component.html',
   styleUrl: './klok.component.css'
 })
@@ -15,18 +17,17 @@ export class KlokComponent implements OnInit, OnDestroy {
   @Output()
   removed: EventEmitter<Klok> = new EventEmitter<Klok>(); 
 
-  tijd: string | undefined;
+  tijd: Date = new Date();
   isNight: boolean = false;
 
   intervalId: number | undefined;
 
   ngOnInit(): void {
     this.intervalId = window.setInterval(() => {
-      const huidigTijdstip = new Date();
-      this.tijd = huidigTijdstip.toLocaleString(this.klok?.locale, { timeZone: this.klok?.timeZone });
+      this.tijd = new Date(); 
 
       const hourIn24FormatInTimeZone = parseInt(
-          huidigTijdstip.toLocaleTimeString(
+        this.tijd.toLocaleTimeString(
             'nl-BE', 
             { hour: '2-digit', hour12: false, timeZone: this.klok?.timeZone})
         );

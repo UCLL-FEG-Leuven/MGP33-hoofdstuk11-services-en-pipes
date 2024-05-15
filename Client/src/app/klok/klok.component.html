@@ -5,7 +5,7 @@
         } @else {
             <span>&#9788;</span>
         }    
-        {{ tijd }}
+        {{ tijd | date:'medium':klok?.timeZone:klok?.locale }}
     </p>
     <button (click)="changeLocale('en-US')">US</button>
     <button (click)="changeLocale('nl-BE')">België</button>
