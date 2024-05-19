@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
+import moment from "moment-timezone";
+
 import { Klok } from '../klok';
 
 @Component({
@@ -34,6 +36,12 @@ export class KlokComponent implements OnInit, OnDestroy {
       this.isNight = hourIn24FormatInTimeZone >= 18 || hourIn24FormatInTimeZone <= 6;
     }, 1000);
   }
+
+  transformTimeZoneToUtc(): string {
+    if (this.klok) {
+      return moment().tz(this.klok?.timeZone).format('Z');
+    } else return "";    
+}
 
   ngOnDestroy(): void {
     clearInterval(this.intervalId);
