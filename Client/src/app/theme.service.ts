@@ -9,12 +9,10 @@ export class ThemeService {
   theme = signal("light");
 
   constructor() {
-    if (!this.theme()) {
-      let storedTheme = localStorage.getItem(LOCAL_STORAGE_KEY)
-      if (storedTheme != null && this.validateTheme(storedTheme)) {
-        this.theme.set(storedTheme);
-      } 
-    }
+    let storedTheme = localStorage.getItem(LOCAL_STORAGE_KEY)
+    if (storedTheme != null && this.validateTheme(storedTheme)) {
+      this.theme.set(storedTheme);
+    } 
   }
 
   changeTheme(theme: string) {

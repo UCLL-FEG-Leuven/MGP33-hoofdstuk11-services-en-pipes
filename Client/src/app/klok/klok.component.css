@@ -4,16 +4,16 @@
 }
 
 .night-light {
-    background-color: #c0c0c0;
+    background-color: #929292;
     color: #fff;
 }
 
 .day-dark {
-    background-color: #e0dfdf;
-    color: #000;
+    background-color: #6d6d6d;
+    color: #ffffff;
 }
 
 .day-light {
-    background-color: #c0c0c0;
+    background-color: #f0f0f0;
     color: #000;
 }
