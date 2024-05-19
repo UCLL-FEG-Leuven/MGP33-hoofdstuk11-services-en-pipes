@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
-import { ThemeComponent } from './theme/theme.component';
+import { ThemeSelectorComponent } from './theme-selector/theme-selector.component';
 import { ThemeService } from './theme.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterLink, RouterOutlet, ThemeComponent],
+  imports: [RouterLink, RouterOutlet, ThemeSelectorComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

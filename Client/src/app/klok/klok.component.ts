@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, Signal, computed } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, Signal, WritableSignal, 
+         computed, signal } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
 import { Klok } from '../klok';
@@ -19,17 +20,17 @@ export class KlokComponent implements OnInit, OnDestroy {
   removed: EventEmitter<Klok> = new EventEmitter<Klok>(); 
 
   tijd: Date = new Date();
-  isNight: boolean = false;
-
+  
   intervalId: number | undefined;
   
+  isNight: WritableSignal<boolean> = signal(false);
   dayOrNightCssClass: Signal<string>;
 
   constructor(public themeService: ThemeService) { 
     this.dayOrNightCssClass = computed(() => {
-      if (this.isNight) return `night-${themeService.theme()}`;
+      if (this.isNight()) return `night-${themeService.theme()}`;
       else return `day-${themeService.theme()}`
-    });  
+    }); 
   }
 
   ngOnInit(): void {
@@ -41,7 +42,7 @@ export class KlokComponent implements OnInit, OnDestroy {
             'nl-BE', 
             { hour: '2-digit', hour12: false, timeZone: this.klok?.timeZone})
         );
-      this.isNight = hourIn24FormatInTimeZone >= 18 || hourIn24FormatInTimeZone <= 6;
+      this.isNight.set(hourIn24FormatInTimeZone >= 18 || hourIn24FormatInTimeZone <= 6);
     }, 1000);
   }
 
