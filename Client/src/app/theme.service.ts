@@ -1,4 +1,4 @@
-import { Injectable, WritableSignal, signal } from '@angular/core';
+import { Injectable,  signal } from '@angular/core';
 
 const LOCAL_STORAGE_KEY = "klokken_theme";
 

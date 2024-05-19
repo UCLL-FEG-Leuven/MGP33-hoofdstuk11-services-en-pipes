@@ -23,10 +23,10 @@ export class KlokComponent implements OnInit, OnDestroy {
 
   intervalId: number | undefined;
   
-  dayOrNight: Signal<string>;
+  dayOrNightCssClass: Signal<string>;
 
   constructor(public themeService: ThemeService) { 
-    this.dayOrNight = computed(() => {
+    this.dayOrNightCssClass = computed(() => {
       if (this.isNight) return `night-${themeService.theme()}`;
       else return `day-${themeService.theme()}`
     });  
