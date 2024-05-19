@@ -16,12 +16,12 @@ export class ThemeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.selectedTheme = this.themeService.selectedTheme;
+    this.selectedTheme = this.themeService.theme();
   }
 
   selectionChanged() {
     if (this.selectedTheme) {
-      this.themeService.selectedTheme = this.selectedTheme;
+      this.themeService.changeTheme(this.selectedTheme);
     }
   }
 }

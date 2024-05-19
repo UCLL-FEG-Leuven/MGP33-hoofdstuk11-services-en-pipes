@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, Signal, computed } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
 import { Klok } from '../klok';
+import { ThemeService } from '../theme.service';
 
 @Component({
   selector: 'app-klok',
@@ -21,6 +22,15 @@ export class KlokComponent implements OnInit, OnDestroy {
   isNight: boolean = false;
 
   intervalId: number | undefined;
+  
+  dayOrNight: Signal<string>;
+
+  constructor(public themeService: ThemeService) { 
+    this.dayOrNight = computed(() => {
+      if (this.isNight) return `night-${themeService.theme()}`;
+      else return `day-${themeService.theme()}`
+    });  
+  }
 
   ngOnInit(): void {
     this.intervalId = window.setInterval(() => {

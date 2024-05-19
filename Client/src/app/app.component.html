@@ -1,13 +1,18 @@
-<h1>Wereldklok</h1>
-<nav>
-  <ul>
-    <li><a routerLink="/klokken">Klokken</a></li>
-    <li><a routerLink="/over">Over</a></li>
-  </ul>
-</nav>
-<app-theme></app-theme>
-
-
-<!-- Met deze tag geven we aan waar de 'klokken' en 'over' componenten 
-     hun content kunnen renderen-->
-<router-outlet></router-outlet>
+<div [className]="themeService.theme()">
+  <header>
+    <h1>Wereldklok</h1>
+    <nav>
+      <ul>
+        <li><a routerLink="/klokken">Klokken</a></li>
+        <li><a routerLink="/over">Over</a></li>
+      </ul>
+    </nav>
+    <app-theme></app-theme>  
+  </header>
+  
+  <main>
+      <!-- Met deze tag geven we aan waar de 'klokken' en 'over' componenten 
+      hun content kunnen renderen-->
+      <router-outlet></router-outlet>
+  </main>  
+</div>

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
+
 import { ThemeComponent } from './theme/theme.component';
+import { ThemeService } from './theme.service';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +12,6 @@ import { ThemeComponent } from './theme/theme.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  constructor(public themeService: ThemeService) {
+  }
 }
