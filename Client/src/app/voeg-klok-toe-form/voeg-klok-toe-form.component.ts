@@ -3,11 +3,10 @@ import { FormsModule } from '@angular/forms';
 import { Klok } from '../klok';
 
 @Component({
-  selector: 'app-voeg-klok-toe-form',
-  standalone: true,
-  imports: [FormsModule],
-  templateUrl: './voeg-klok-toe-form.component.html',
-  styleUrl: './voeg-klok-toe-form.component.css'
+    selector: 'app-voeg-klok-toe-form',
+    imports: [FormsModule],
+    templateUrl: './voeg-klok-toe-form.component.html',
+    styleUrl: './voeg-klok-toe-form.component.css'
 })
 export class VoegKlokToeFormComponent {
   @Output()

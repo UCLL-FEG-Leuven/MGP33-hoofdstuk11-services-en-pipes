@@ -5,11 +5,10 @@ import { ThemeSelectorComponent } from './theme-selector/theme-selector.componen
 import { ThemeService } from './theme.service';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterLink, RouterOutlet, ThemeSelectorComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    imports: [RouterLink, RouterOutlet, ThemeSelectorComponent],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css'
 })
 export class AppComponent {
   constructor(public themeService: ThemeService) {

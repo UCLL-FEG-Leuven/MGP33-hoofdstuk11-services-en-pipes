@@ -6,11 +6,10 @@ import { Klok } from '../klok';
 import { ThemeService } from '../theme.service';
 
 @Component({
-  selector: 'app-klok',
-  standalone: true,
-  imports: [DatePipe],
-  templateUrl: './klok.component.html',
-  styleUrl: './klok.component.css'
+    selector: 'app-klok',
+    imports: [DatePipe],
+    templateUrl: './klok.component.html',
+    styleUrl: './klok.component.css'
 })
 export class KlokComponent implements OnInit, OnDestroy {
   @Input()

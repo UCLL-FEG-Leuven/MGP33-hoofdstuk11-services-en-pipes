@@ -8,11 +8,10 @@ import { Klok } from '../klok';
 import { KlokService } from '../klok.service';
 
 @Component({
-  selector: 'app-klokken',
-  standalone: true,
-  imports: [CommonModule, FormsModule, RouterOutlet, KlokComponent, VoegKlokToeFormComponent],
-  templateUrl: './klokken.component.html',
-  styleUrl: './klokken.component.css'
+    selector: 'app-klokken',
+    imports: [CommonModule, FormsModule, RouterOutlet, KlokComponent, VoegKlokToeFormComponent],
+    templateUrl: './klokken.component.html',
+    styleUrl: './klokken.component.css'
 })
 export class KlokkenComponent implements OnInit {
   klokken: Klok[] = [];
