@@ -1,6 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
 import { KlokComponent } from '../klok/klok.component';
 import { FormsModule } from '@angular/forms';
 import { VoegKlokToeFormComponent } from '../voeg-klok-toe-form/voeg-klok-toe-form.component';
@@ -9,7 +8,7 @@ import { KlokService } from '../klok.service';
 
 @Component({
     selector: 'app-klokken',
-    imports: [CommonModule, FormsModule, RouterOutlet, KlokComponent, VoegKlokToeFormComponent],
+    imports: [CommonModule, FormsModule, KlokComponent, VoegKlokToeFormComponent],
     templateUrl: './klokken.component.html',
     styleUrl: './klokken.component.css'
 })
