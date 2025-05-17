@@ -3,7 +3,7 @@
   "version": "0.10.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4210",
+    "start": "npm ci & ng serve --port 4211",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
