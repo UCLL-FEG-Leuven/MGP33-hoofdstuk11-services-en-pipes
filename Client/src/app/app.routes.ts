@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { KlokkenComponent } from './klokken/klokken.component';
-import { OverComponent } from './over/over.component';
+import { Klokken } from './klokken/klokken';
+import { Over } from './over/over';
 
 export const routes: Routes = [
-    { path: 'klokken', component: KlokkenComponent },
-    { path: 'over', component: OverComponent },
+    { path: 'klokken', component: Klokken },
+    { path: 'over', component: Over },
 ];

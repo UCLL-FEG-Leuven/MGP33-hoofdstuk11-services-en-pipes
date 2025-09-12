@@ -2,21 +2,21 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, Signal, Writ
          computed, signal } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
-import { Klok } from '../klok';
+import { Klok as KlokModel } from '../klok';
 import { ThemeService } from '../theme.service';
 
 @Component({
     selector: 'app-klok',
     imports: [DatePipe],
-    templateUrl: './klok.component.html',
-    styleUrl: './klok.component.css'
+    templateUrl: './klok.html',
+    styleUrl: './klok.css'
 })
-export class KlokComponent implements OnInit, OnDestroy {
+export class Klok implements OnInit, OnDestroy {
   @Input()
-  klok: Klok | undefined;
+  klok: KlokModel | undefined;
 
   @Output()
-  removed: EventEmitter<Klok> = new EventEmitter<Klok>(); 
+  removed: EventEmitter<KlokModel> = new EventEmitter<KlokModel>(); 
 
   tijd: Date = new Date();
   

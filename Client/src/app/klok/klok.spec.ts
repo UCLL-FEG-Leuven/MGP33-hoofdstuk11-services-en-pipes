@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { KlokComponent } from './klok.component';
+import { KlokComponent } from './klok';
 
 describe('KlokComponent', () => {
   let component: KlokComponent;

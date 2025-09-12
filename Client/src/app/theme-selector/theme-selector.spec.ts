@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { KlokkenComponent } from './klokken.component';
+import { ThemeSelector } from './theme-selector';
 
-describe('KlokkenComponent', () => {
-  let component: KlokkenComponent;
-  let fixture: ComponentFixture<KlokkenComponent>;
+describe('ThemeSelectorComponent', () => {
+  let component: ThemeSelector;
+  let fixture: ComponentFixture<ThemeSelector>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [KlokkenComponent]
+      imports: [ThemeSelector]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(KlokkenComponent);
+    fixture = TestBed.createComponent(ThemeSelector);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

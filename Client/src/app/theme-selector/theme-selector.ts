@@ -5,10 +5,10 @@ import { FormsModule } from '@angular/forms';
 @Component({
     selector: 'app-theme-selector',
     imports: [FormsModule],
-    templateUrl: './theme-selector.component.html',
-    styleUrl: './theme-selector.component.css'
+    templateUrl: './theme-selector.html',
+    styleUrl: './theme-selector.css'
 })
-export class ThemeSelectorComponent implements OnInit {
+export class ThemeSelector implements OnInit {
   selectedTheme: string | undefined;
 
   constructor(private themeService: ThemeService) {    

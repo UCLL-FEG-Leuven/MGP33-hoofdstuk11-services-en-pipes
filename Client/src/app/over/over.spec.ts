@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ThemeSelectorComponent } from './theme-selector.component';
+import { OverComponent } from './over';
 
-describe('ThemeSelectorComponent', () => {
-  let component: ThemeSelectorComponent;
-  let fixture: ComponentFixture<ThemeSelectorComponent>;
+describe('OverComponent', () => {
+  let component: OverComponent;
+  let fixture: ComponentFixture<OverComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ThemeSelectorComponent]
+      imports: [OverComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ThemeSelectorComponent);
+    fixture = TestBed.createComponent(OverComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
