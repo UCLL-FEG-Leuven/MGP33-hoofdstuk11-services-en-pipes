@@ -4,7 +4,7 @@ import { Klok } from '../klok/klok';
 import { FormsModule } from '@angular/forms';
 import { VoegKlokToeFormComponent } from '../voeg-klok-toe-form/voeg-klok-toe-form.component';
 import { Klok as KlokModel } from '../klok';
-import { KlokService } from '../klok.service';
+import { KlokApi } from '../klok-api';
 
 @Component({
     selector: 'app-klokken',
@@ -18,11 +18,11 @@ export class Klokken implements OnInit {
   @ViewChild("nieuweKlokDialog")
   nieuweKlokDialog: ElementRef<HTMLDialogElement> | undefined;
 
-  constructor(private klokService: KlokService) {    
+  constructor(private klokApi: KlokApi) {    
   }
 
   async ngOnInit(): Promise<void> {
-      this.klokken = await this.klokService.getKlokken();
+      this.klokken = await this.klokApi.getKlokken();
   }
 
   toonNieuweKlokDialog() {

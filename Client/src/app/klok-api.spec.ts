@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { KlokService } from './klok.service';
+import { KlokApi } from './klok-api';
 
 describe('KlokService', () => {
-  let service: KlokService;
+  let service: KlokApi;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(KlokService);
+    service = TestBed.inject(KlokApi);
   });
 
   it('should be created', () => {

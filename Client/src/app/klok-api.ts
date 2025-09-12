@@ -7,7 +7,7 @@ import { Klok } from './klok';
 @Injectable({
   providedIn: 'root',
 })
-export class KlokService {
+export class KlokApi {
   private url = 'http://localhost:3011';
 
   constructor(private http: HttpClient) { }
@@ -15,7 +15,8 @@ export class KlokService {
   getKlokken$(): Observable<Klok[]> {
     return this.http.get<any[]>(`${this.url}/my-clocks`)
       .pipe(map((klokkenLiteralsArray: any[]) => {
-        return klokkenLiteralsArray.map(klokLiteral => new Klok(klokLiteral.name, klokLiteral.timeZone, klokLiteral.locale));
+        return klokkenLiteralsArray.map(klokLiteral => new Klok(
+          klokLiteral.name, klokLiteral.timeZone, klokLiteral.locale));
       }));
   }
 

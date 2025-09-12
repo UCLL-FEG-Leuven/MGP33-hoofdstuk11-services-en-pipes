@@ -18,7 +18,7 @@ export class Klok implements OnInit, OnDestroy {
   @Output()
   removed: EventEmitter<KlokModel> = new EventEmitter<KlokModel>(); 
 
-  tijd: Date = new Date();
+  tijd = signal(new Date());
   
   intervalId: number | undefined;
   
@@ -34,10 +34,10 @@ export class Klok implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.intervalId = window.setInterval(() => {
-      this.tijd = new Date(); 
+      this.tijd.set(new Date()); 
 
       const hourIn24FormatInTimeZone = parseInt(
-        this.tijd.toLocaleTimeString(
+        this.tijd().toLocaleTimeString(
             'nl-BE', 
             { hour: '2-digit', hour12: false, timeZone: this.klok?.timeZone})
         );
