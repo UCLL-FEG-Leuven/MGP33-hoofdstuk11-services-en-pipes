@@ -3,7 +3,6 @@ import { provideZonelessChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { registerLocaleData } from '@angular/common';
-
 import localeNlBe from '@angular/common/locales/nl-BE';
 import localeJaJp from '@angular/common/locales/ja';
 

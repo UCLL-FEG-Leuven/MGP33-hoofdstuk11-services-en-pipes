@@ -1,9 +1,10 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, Signal, WritableSignal, 
-         computed, signal } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, 
+  Signal, WritableSignal, 
+  computed, signal } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
 import { Klok as KlokModel } from '../klok';
-import { ThemeService } from '../theme.service';
+import { ThemeManager } from '../theme-manager';
 
 @Component({
     selector: 'app-klok',
@@ -25,7 +26,7 @@ export class Klok implements OnInit, OnDestroy {
   isNight: WritableSignal<boolean> = signal(false);
   dayOrNightCssClass: Signal<string>;
 
-  constructor(public themeService: ThemeService) { 
+  constructor(public themeService: ThemeManager) { 
     this.dayOrNightCssClass = computed(() => {
       if (this.isNight()) return `night-${themeService.theme()}`;
       else return `day-${themeService.theme()}`

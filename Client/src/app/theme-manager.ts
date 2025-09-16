@@ -5,7 +5,7 @@ const LOCAL_STORAGE_KEY = "klokken_theme";
 @Injectable({
   providedIn: 'root'
 })
-export class ThemeService {
+export class ThemeManager {
   theme = signal("light");
 
   constructor() {

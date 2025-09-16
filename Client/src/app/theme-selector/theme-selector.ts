@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ThemeService } from '../theme.service';
+import { ThemeManager } from '../theme-manager';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -11,16 +11,16 @@ import { FormsModule } from '@angular/forms';
 export class ThemeSelector implements OnInit {
   selectedTheme: string | undefined;
 
-  constructor(private themeService: ThemeService) {    
+  constructor(private themeManager: ThemeManager) {    
   }
 
   ngOnInit(): void {
-    this.selectedTheme = this.themeService.theme();
+    this.selectedTheme = this.themeManager.theme();
   }
 
   selectionChanged() {
     if (this.selectedTheme) {
-      this.themeService.changeTheme(this.selectedTheme);
+      this.themeManager.changeTheme(this.selectedTheme);
     }
   }
 }
