@@ -1,4 +1,4 @@
-@for (klok of klokken; track klok.timeZone) {
+@for (klok of klokken(); track klok.timeZone) {
     <app-klok [klok]="klok" (removed)="removeChild($event)"></app-klok>
 }
 <br>
